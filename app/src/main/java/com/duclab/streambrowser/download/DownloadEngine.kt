@@ -40,14 +40,16 @@ class DownloadEngine(private val context: Context) {
         if (media.sourcePage.isNotBlank() && media.headers.keys.none { it.equals("Referer", true) }) {
             request.addOption("--referer", media.sourcePage)
         }
-
+        
         YoutubeDL.getInstance().execute(
-            request,
-            { progress, etaInSeconds ->
-                onProgress((progress / 100f).coerceIn(0f, 1f), etaInSeconds.toLong())
-            },
+             request,
             "stream-${System.currentTimeMillis()}"
-        )
+        ) { progress, etaInSeconds, _ ->
+            onProgress(
+                (progress / 100f).coerceIn(0f, 1f),
+                etaInSeconds
+            )
+        }
 
         val output = workDir.listFiles()
             ?.filter { it.isFile && !it.name.endsWith(".part") && !it.name.endsWith(".ytdl") }
