@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.duclab.streambrowser"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.duclab.streambrowser"
