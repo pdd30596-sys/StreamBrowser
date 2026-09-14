@@ -1,0 +1,23 @@
+# Conservative host-level blocking list for V1.
+doubleclick.net
+googleads.g.doubleclick.net
+googlesyndication.com
+googleadservices.com
+adservice.google.com
+adnxs.com
+adsrvr.org
+amazon-adsystem.com
+criteo.com
+criteo.net
+pubmatic.com
+rubiconproject.com
+openx.net
+casalemedia.com
+scorecardresearch.com
+taboola.com
+outbrain.com
+zedo.com
+adform.net
+smartadserver.com
+moatads.com
+quantserve.com
