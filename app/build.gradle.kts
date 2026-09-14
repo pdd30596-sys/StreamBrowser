@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.duclab.streambrowser"
-    compileSdk = 37
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.duclab.streambrowser"
@@ -49,7 +49,8 @@ kotlin {
 }
 
 dependencies {
-    val composeBom = platform("androidx.compose:compose-bom:2026.08.00")
+    val composeBom = platform("androidx.compose:compose-bom:2025.12.00")
+
     val media3 = "1.11.0"
     val ytdl = "0.18.1"
 
