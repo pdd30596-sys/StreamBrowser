@@ -19,6 +19,12 @@ jobs:
           distribution: temurin
           java-version: '21'
 
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android API 37
+        run: sdkmanager "platforms;android-37"
+
       - name: Make Gradle executable
         run: chmod +x gradlew
 
@@ -26,6 +32,7 @@ jobs:
         run: ./gradlew assembleDebug --stacktrace
 
       - name: Upload APK
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: StreamBrowser-V1-debug
